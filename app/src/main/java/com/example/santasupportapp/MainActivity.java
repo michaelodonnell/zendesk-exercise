@@ -5,6 +5,9 @@ import android.os.Bundle;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
+import com.zopim.android.sdk.api.ZopimChat;
+import com.zopim.android.sdk.model.VisitorInfo;
+import com.zopim.android.sdk.prechat.ZopimChatActivity;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -38,6 +41,9 @@ public class MainActivity extends AppCompatActivity {
                 .intent(this);
         final Intent requestIntent = RequestActivity.builder()
                 .intent(this);
+        ZopimChat.init("rukyvvcOsFeMp60pvMs2yLGdOsAbPxYg");
+        VisitorInfo visitorInfo = new VisitorInfo.Builder().build();
+        ZopimChat.setVisitorInfo(visitorInfo);
         /* Zendesk End */
 
         FloatingActionButton fab1 = findViewById(R.id.fab1);
@@ -45,6 +51,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(helpCenterIntent);
+            }
+        });
+
+        FloatingActionButton fab2 = findViewById(R.id.fab2);
+        fab2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), ZopimChatActivity.class));
             }
         });
 
