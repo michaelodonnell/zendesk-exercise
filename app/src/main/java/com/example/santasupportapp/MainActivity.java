@@ -40,8 +40,16 @@ public class MainActivity extends AppCompatActivity {
                 .intent(this);
         /* Zendesk End */
 
-        FloatingActionButton fab = findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
+        FloatingActionButton fab1 = findViewById(R.id.fab1);
+        fab1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(helpCenterIntent);
+            }
+        });
+
+        FloatingActionButton fab3 = findViewById(R.id.fab3);
+        fab3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(requestIntent);
