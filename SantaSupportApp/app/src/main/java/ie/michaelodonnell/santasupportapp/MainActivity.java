@@ -33,7 +33,9 @@ public class MainActivity extends AppCompatActivity {
         Identity identity = new AnonymousIdentity();
         Zendesk.INSTANCE.setIdentity(identity);
         Support.INSTANCE.init(Zendesk.INSTANCE);
-        final Intent intent = RequestActivity.builder()
+        final Intent helpCenterIntent = HelpCenterActivity.builder()
+                .intent(this);
+        final Intent requestIntent = RequestActivity.builder()
                 .intent(this);
         /* Zendesk End */
 
@@ -48,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(intent);
+                startActivity(requestIntent);
             }
         });
     }
