@@ -1,4 +1,11 @@
 <resources>
     <string name="app_name">Santa Support</string>
     <string name="action_settings">Settings</string>
+    <string name="zab_answer_bot">Auto Elf</string>
+    <string name="zab_toolbar_subtitle">Loves his coffee</string>
+    <string name="zab_cell_text_prompt">Santa\'s a little busy right now, can I help?</string>
+    <string name="zab_cell_text_welcome">Hi from the North Pole!</string>
+    <string name="zab_cell_text_inactivity_contact_option_header">Or you can leave a message for the daytime elves.</string>
+    <string name="zui_hint_type_message">Ask Auto Elf a question....</string>
+    <string name="zab_cell_text_acknowledgement_did_help">Oh boy, Santa\'s going to be pretty happy with me!</string>
 </resources>
