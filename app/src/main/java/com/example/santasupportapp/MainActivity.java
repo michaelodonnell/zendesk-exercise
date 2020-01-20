@@ -17,6 +17,8 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import zendesk.answerbot.AnswerBot;
+import zendesk.answerbot.AnswerBotActivity;
 import zendesk.core.AnonymousIdentity;
 import zendesk.core.Identity;
 import zendesk.core.Zendesk;
@@ -38,9 +40,13 @@ public class MainActivity extends AppCompatActivity {
         Identity identity = new AnonymousIdentity();
         Zendesk.INSTANCE.setIdentity(identity);
         Support.INSTANCE.init(Zendesk.INSTANCE);
+
+        // Enable the Answer Bot SDK
+        AnswerBot.INSTANCE.init(Zendesk.INSTANCE, Support.INSTANCE);
+
         final Intent helpCenterIntent = HelpCenterActivity.builder()
                 .intent(this);
-        final Intent requestIntent = RequestActivity.builder()
+        final Intent requestIntent = AnswerBotActivity.builder()
                 .intent(this);
 
         // build pre chat form config
@@ -48,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
                 .name(PreChatForm.Field.REQUIRED)
                 .build();
 
-// initialize the chat with global configuration
+        // initialize the chat with global configuration
         ZopimChat.init("rukyvvcOsFeMp60pvMs2yLGdOsAbPxYg").preChatForm(defaultPreChat);
         VisitorInfo visitorInfo = new VisitorInfo.Builder().build();
         ZopimChat.setVisitorInfo(visitorInfo);

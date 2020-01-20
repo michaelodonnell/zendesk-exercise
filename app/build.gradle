@@ -29,6 +29,8 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
     implementation group: 'com.zendesk', name: 'support', version: '3.0.2'
     implementation group: 'com.zopim.android', name: 'sdk', version: '1.4.4'
+    implementation group: 'com.zendesk', name: 'answerbot', version: '1.0.1'
+    implementation 'com.google.android.material:material:1.2.0-alpha03'
 
     repositories {
         maven { url 'https://zendesk.jfrog.io/zendesk/repo' }
